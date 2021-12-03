@@ -1,0 +1,13 @@
+build/
+release/
+documentation/html
+documentation/latex
+*.generated.h
+*.generated.cpp
+CMakeFiles/
+.cache/
+.idea/
+cmake-build-debug/
+.vs/
+out/
+.vimspector.json
