@@ -14,17 +14,15 @@ file(
 )
 
 
-if(UNIX)
-  set(CMAKE_CXX_STANDARD 20)
-  find_package(GTest CONFIG REQUIRED)
-  # include_directories(${ASSIMP_INCLUDE_DIRS})
-endif(UNIX)
+set(CMAKE_CXX_STANDARD 20)
+find_package(GTest CONFIG REQUIRED)
+find_package(OpenCV REQUIRED)
 
-include_directories(src vendor)
+include_directories(src vendor ${OpenCV_INCLUDE_DIRS})
 
 set(TargetIncludeDirs src vendor)
 
-set(Libs GL glfw3 X11 Xxf86vm Xrandr pthread Xi dl freetype)
+set(Libs GL glfw3 X11 Xxf86vm Xrandr pthread Xi dl freetype ${OpenCV_LIBS})
 
 add_executable(${This} ${Sources})
 
