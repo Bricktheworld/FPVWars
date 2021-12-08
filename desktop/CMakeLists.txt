@@ -17,12 +17,13 @@ file(
 set(CMAKE_CXX_STANDARD 20)
 find_package(GTest CONFIG REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(SDL2 REQUIRED)
 
-include_directories(src vendor ${OpenCV_INCLUDE_DIRS})
+include_directories(src vendor ${OpenCV_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS})
 
 set(TargetIncludeDirs src vendor)
 
-set(Libs GL glfw3 X11 Xxf86vm Xrandr pthread Xi dl freetype ${OpenCV_LIBS})
+set(Libs GL glfw3 X11 Xxf86vm Xrandr pthread Xi dl freetype ${OpenCV_LIBS} ${SDL2_LIBRARIES})
 
 add_executable(${This} ${Sources})
 
